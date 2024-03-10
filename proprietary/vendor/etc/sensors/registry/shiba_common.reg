@@ -39,6 +39,10 @@
 # Sensors
 #
 
+# ALSP (TMD37193)
++/dev/tmd3719/0
+  start_als_on_ap_power_on=1
+
 # IMU (ICM45631)
 +/dev/icm45631/0
   bus_name=i3c0
@@ -48,7 +52,6 @@
   i3c_addr=0xa
   intr_id=43
   trigger_type=2
-  gpio_id=gpio86
   priority=0
   md_threshold=60
   md_duration_samples=1
@@ -63,6 +66,9 @@
 +/dev/icm45631/0/gyro
   orientation_transform=2 -1 3
 +/dev/icm45631/0/temp
++/dev/icm45631/0/motion_detect
++/dev/icm45631/0/stationary_detect
++/dev/icm45631/0/freefall_detect
 
 # MAG (MMC5633NJ)
 +/dev/mmc56x3x/0
