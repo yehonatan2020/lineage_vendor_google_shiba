@@ -177,15 +177,15 @@ slice/1/low_adc_rate_en=0
 
 
 # Base K Values (For the VHT case 5G 160 & 5G80/40/20/2G20)
-proxd_basekival_5g_160=9700
-proxd_basektval_5g_160=9700
-proxd_basekival=3205337,-9999,44904,0
-proxd_basektval=3205337,-9999,44904,0
+proxd_basekival_5g_160=13571
+proxd_basektval_5g_160=13571
+proxd_basekival=3211022,-5332,49794,0
+proxd_basektval=3211022,-5332,49794,0
 # Offsets across channels (Upper nibble for target, lower nibble for initiator - saved in hex)
-proxd_160mkval=0x0000,0x0000
-proxd_80mkval=0x0000,0x0303,0x0101,0x0303,0x0000,0x0202
+proxd_160mkval=0x0101,0x0000
+proxd_80mkval=0x0202,0x0101,0x0101,0x0000,0x0101,0x0202
 proxd_40mkval=0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0000,0x0000
-proxd_20mkval=0x0303,0x0101,0x0000,0x0202,0x0303,0x0202,0x0202,0x0202,0x0101,0x0101,0x0101,0x0101,0x0101,0x0101,0x0202,0x0202,0x0303,0x0000,0x0202,0x0202,0x0101,0x0101,0x0202,0x0101,0x0101
+proxd_20mkval=0x0404,0x0202,0x0101,0x0101,0x0101,0x0101,0x0101,0x0101,0x0101,0x0101,0x0000,0x0101,0x0101,0x0000,0x0000,0x0000,0x0000,0x0101,0x0101,0x0101,0x0101,0x0101,0x0202,0x0101,0x0202
 proxd_2gkval=0
 # Offsets across frame formats @ Initiator
 # Only for non-VHT frame (Leg6, Leg non-6, mcs0, non-mcs0)
@@ -205,12 +205,12 @@ proxdt_ack=0,0,0,0
 proxd_sub80m40m=0,0,0,0,0
 proxd_sub80m20m=0,0,0,0,0
 proxd_sub40m20m=0,0,0,0,0
-proxd_sub80m40m_ch_off=2,14965,16612,15914,17815,-182
-proxd_sub80m20m_ch_off=-62,14089,9826,10227,4791,-119
-proxd_sub40m20m_ch_off=0,0,-23082,-25418,-24704,-23741,-25767,-26942,-27906,-22909,0
-proxd_sub160m80m_ch_off=19699,20072
-proxd_sub160m40m_ch_off=19699,20003
-proxd_sub160m20m_ch_off=9182,13329
+proxd_sub80m40m_ch_off=-69,16150,16467,15524,15386,-92
+proxd_sub80m20m_ch_off=-165,8415,7509,11095,11721,15
+proxd_sub40m20m_ch_off=-20,0,-26308,-25406,-27062,-27067,-23391,-24231,-23796,-24834,0
+proxd_sub160m80m_ch_off=19986,18904
+proxd_sub160m40m_ch_off=18830,18087
+proxd_sub160m20m_ch_off=12740,9312
 
 nocrc=1
 otpimagesize=502

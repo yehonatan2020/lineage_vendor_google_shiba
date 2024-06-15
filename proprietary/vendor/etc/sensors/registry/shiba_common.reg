@@ -160,6 +160,43 @@
   long_press_motion_tolerance_inner=255
   long_press_motion_tolerance_outer=494
 
+# TOUCH (GTX)
++/dev/gtx/0
+  bus_name=spi2
+  bus_freq_hz=10000000
+  spi_mode=0
+  spi_word_size=8
+  gesture_type=3
+  intr_id=14
+  intr_type=3
+  panel_height_pixel=2400
+  panel_height_mm=143
+  single_tap_min_x=92
+  single_tap_max_x=987
+  single_tap_min_y=184
+  single_tap_max_y=2215
+  single_tap_min_frame_count=3
+  single_tap_max_frame_count=31
+  single_press_motion_tolerance=255
+  single_press_max_touch_size=50
+  long_press_min_x=439
+  long_press_max_x=641
+  long_press_min_y=1662
+  long_press_max_y=1864
+  long_press_min_frame_count=1
+  long_press_max_touch_size=50
+  long_press_marginal_min_x=397
+  long_press_marginal_max_x=683
+  long_press_marginal_min_y=1620
+  long_press_marginal_max_y=1906
+  long_press_monitor_channel_min_tx=6
+  long_press_monitor_channel_max_tx=9
+  long_press_monitor_channel_min_rx=24
+  long_press_monitor_channel_max_rx=27
+  long_press_min_node_count=8
+  long_press_motion_tolerance_inner=255
+  long_press_motion_tolerance_outer=494
+
 # TBN
 +/tbn
   tbn_mode=2
@@ -184,18 +221,26 @@
   rear_lux_downscaling=0 0 0
 
 +/vsc/fusion_prox_voice_call
-  # Type of Fusion Algorithm used.
-  # 0: State machine driven by Optical and Ultrasound Prox events (default)
-  # 1: Optical Prox Passthrough
-  # 2: Ultrasound Prox Passthrough
-  algo=1
-  # On-change threshold for U/S Prox confidence value.
-  on_change_thresh_us_conf=0.1
-  # On-change threshold for U/S Prox mean power value.
-  on_change_thresh_us_mean=10
+  # 0: Normal (fusion of Optical Prox with other sensors)
+  # 1: Optical Prox Passthrough (skips all other fusion logic)
+  # 2: Optical Prox Overwrite (runs fusion logic but outputs Optical Prox state)
+  mode=1
 
-# Properties specific to Fusion Algo type 0.
-+/vsc/fusion_prox_voice_call/0
-  # Timeout when in Optical=0 but Ultrasound=1 state.
-  # Used to prevent false positives when near an object like a wall.
-  false_us_near_timeout_msec=1000
+  # Timeout when in Interactive and FalseFar state before switching to Near.
+  # Default: 1000ms
+  interactive_false_far_timeout_ms=1000
+
+  # Horizontal angle between device and earth to enter and exit Interactive
+  # state. Angles need to be less than 90 degrees, and exit >= enter.
+  # Defaults: 45 (enter) and 50 (exit)
+  interactive_thresh_angles=45 50
+
+  # Minimum horizontal angle between device and earth to qualify a valid
+  # To-Ear gesture. Should be larger than the interactive exit angle.
+  # Default: 60
+  to_ear_thresh_angle=60
+
+  # Change in horizontal angle between device and earth to trigger a From-Ear
+  # event. The initial angle to compare against is taken on a To-Ear event.
+  # Default: 30
+  from_ear_delta_thresh_angle=30

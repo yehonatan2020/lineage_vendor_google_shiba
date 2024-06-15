@@ -50,13 +50,18 @@
 						"minNumFramesCaseDetection": 20000,
 						"scalingFactorSignalStrength": 0.98,
 						"scalingFactorSignalStrength2": 0.99,
-						"debounceDelayCaseAbsentToPresentMs": 14400000,
+						"debounceDelayCaseAbsentToPresentMs": 0,
 					}
 				},
 				{
 					"class": "TouchSuezAlgorithm",
 					"name": "touchsuez",
 					"blocked_by": ["gril_antenna_tuning"],
+				},
+				{
+					"class": "SensorFusionAlgorithm",
+					"name": "sensorfusion",
+					"blocked_by": ["touchsuez"],
 				}
 			],
 		}
