@@ -42,9 +42,6 @@ PRODUCT_COPY_FILES += \
     vendor/google/shiba/proprietary/product/etc/sysconfig/pixel_experience_2022_midyear.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/pixel_experience_2022_midyear.xml \
     vendor/google/shiba/proprietary/product/etc/sysconfig/pixel_experience_2023.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/pixel_experience_2023.xml \
     vendor/google/shiba/proprietary/product/etc/sysconfig/pixel_experience_2023_midyear.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/pixel_experience_2023_midyear.xml \
-    vendor/google/shiba/proprietary/product/lib64/libdmengine.so:$(TARGET_COPY_OUT_PRODUCT)/lib64/libdmengine.so \
-    vendor/google/shiba/proprietary/product/lib64/libdmjavaplugin.so:$(TARGET_COPY_OUT_PRODUCT)/lib64/libdmjavaplugin.so \
-    vendor/google/shiba/proprietary/system_ext/bin/hw/vendor.google.edgetpu_app_service@1.0-service:$(TARGET_COPY_OUT_SYSTEM_EXT)/bin/hw/vendor.google.edgetpu_app_service@1.0-service \
     vendor/google/shiba/proprietary/system_ext/etc/default-permissions/default-permissions-euiccpixel.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/default-permissions/default-permissions-euiccpixel.xml \
     vendor/google/shiba/proprietary/system_ext/etc/init/vendor.google.edgetpu_app_service@1.0-service.rc:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/init/vendor.google.edgetpu_app_service@1.0-service.rc \
     vendor/google/shiba/proprietary/system_ext/etc/permissions/com.android.hotwordenrollment.common.util.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/com.android.hotwordenrollment.common.util.xml \
@@ -63,16 +60,18 @@ PRODUCT_COPY_FILES += \
     vendor/google/shiba/proprietary/system_ext/etc/permissions/privapp-permissions-google-se-lineage.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-google-se-lineage.xml \
     vendor/google/shiba/proprietary/system_ext/etc/permissions/vzw_mvs_permissions.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/vzw_mvs_permissions.xml \
     vendor/google/shiba/proprietary/system_ext/etc/public.libraries-google.txt:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/public.libraries-google.txt \
-    vendor/google/shiba/proprietary/system_ext/lib64/com.google.edgetpu_app_service-V3-ndk.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib64/com.google.edgetpu_app_service-V3-ndk.so \
-    vendor/google/shiba/proprietary/system_ext/lib64/com.google.edgetpu_vendor_service-V2-ndk.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib64/com.google.edgetpu_vendor_service-V2-ndk.so \
-    vendor/google/shiba/proprietary/system_ext/lib64/libedgetpu_dba.google.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib64/libedgetpu_dba.google.so \
-    vendor/google/shiba/proprietary/system_ext/lib64/libmediaadaptor.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib64/libmediaadaptor.so \
-    vendor/google/shiba/proprietary/system_ext/lib64/libpixeldisplaymanager_jni.so:$(TARGET_COPY_OUT_SYSTEM_EXT)/lib64/libpixeldisplaymanager_jni.so \
     vendor/google/shiba/proprietary/system_ext/priv-app/EuiccSupportPixel-P23/esim-full-v1-m40.img:$(TARGET_COPY_OUT_SYSTEM_EXT)/priv-app/EuiccSupportPixel-P23/esim-full-v1-m40.img \
     vendor/google/shiba/proprietary/system_ext/priv-app/EuiccSupportPixel-P23/esim-full-v1-m41.img:$(TARGET_COPY_OUT_SYSTEM_EXT)/priv-app/EuiccSupportPixel-P23/esim-full-v1-m41.img \
     vendor/google/shiba/proprietary/system_ext/priv-app/EuiccSupportPixel-P23/esim-full-v1.img:$(TARGET_COPY_OUT_SYSTEM_EXT)/priv-app/EuiccSupportPixel-P23/esim-full-v1.img
 
 PRODUCT_PACKAGES += \
+    libdmengine \
+    libdmjavaplugin \
+    com.google.edgetpu_app_service-V3-ndk \
+    com.google.edgetpu_vendor_service-V2-ndk \
+    libedgetpu_dba.google \
+    libmediaadaptor \
+    libpixeldisplaymanager_jni \
     VZWAPNLib \
     AICorePrebuilt \
     AppDirectedSMSService \
@@ -114,6 +113,7 @@ PRODUCT_PACKAGES += \
     com.google.android.camerax.extensions \
     google-ril \
     oemrilhook \
+    vendor.google.edgetpu_app_service@1.0-service \
     vendor.google.edgetpu_app_service@1.0-service
 
 PRODUCT_PACKAGES += \
@@ -464,56 +464,6 @@ PRODUCT_COPY_FILES += \
     vendor/google/shiba/proprietary/product/etc/CarrierSettings/zain_sa.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/zain_sa.pb \
     vendor/google/shiba/proprietary/product/etc/CarrierSettings/zeop_re.pb:$(TARGET_COPY_OUT_PRODUCT)/etc/CarrierSettings/zeop_re.pb
 PRODUCT_COPY_FILES += \
-    vendor/google/shiba/proprietary/vendor/bin/aocd:$(TARGET_COPY_OUT_VENDOR)/bin/aocd \
-    vendor/google/shiba/proprietary/vendor/bin/aocxd:$(TARGET_COPY_OUT_VENDOR)/bin/aocxd \
-    vendor/google/shiba/proprietary/vendor/bin/bipchmgr:$(TARGET_COPY_OUT_VENDOR)/bin/bipchmgr \
-    vendor/google/shiba/proprietary/vendor/bin/cbd:$(TARGET_COPY_OUT_VENDOR)/bin/cbd \
-    vendor/google/shiba/proprietary/vendor/bin/dmd:$(TARGET_COPY_OUT_VENDOR)/bin/dmd \
-    vendor/google/shiba/proprietary/vendor/bin/hw/android.hardware.authsecret-service.citadel:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.authsecret-service.citadel \
-    vendor/google/shiba/proprietary/vendor/bin/hw/android.hardware.bluetooth-service.bcmbtlinux:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.bluetooth-service.bcmbtlinux \
-    vendor/google/shiba/proprietary/vendor/bin/hw/android.hardware.confirmationui-service.trusty.vendor:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.confirmationui-service.trusty.vendor \
-    vendor/google/shiba/proprietary/vendor/bin/hw/android.hardware.contexthub-service.generic:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.contexthub-service.generic \
-    vendor/google/shiba/proprietary/vendor/bin/hw/android.hardware.edgetpu.logging@service-edgetpu-logging:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.edgetpu.logging@service-edgetpu-logging \
-    vendor/google/shiba/proprietary/vendor/bin/hw/android.hardware.gnss@2.1-service-brcm:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.gnss@2.1-service-brcm \
-    vendor/google/shiba/proprietary/vendor/bin/hw/android.hardware.gxp.logging@service-gxp-logging:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.gxp.logging@service-gxp-logging \
-    vendor/google/shiba/proprietary/vendor/bin/hw/android.hardware.identity@1.0-service.citadel:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.identity@1.0-service.citadel \
-    vendor/google/shiba/proprietary/vendor/bin/hw/android.hardware.input.processor-service:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.input.processor-service \
-    vendor/google/shiba/proprietary/vendor/bin/hw/android.hardware.neuralnetworks@service-darwinn-aidl:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.neuralnetworks@service-darwinn-aidl \
-    vendor/google/shiba/proprietary/vendor/bin/hw/android.hardware.oemlock-service.citadel:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.oemlock-service.citadel \
-    vendor/google/shiba/proprietary/vendor/bin/hw/android.hardware.secure_element-service.uicc:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.secure_element-service.uicc \
-    vendor/google/shiba/proprietary/vendor/bin/hw/android.hardware.security.keymint-service.citadel:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.security.keymint-service.citadel \
-    vendor/google/shiba/proprietary/vendor/bin/hw/android.hardware.weaver-service.citadel:$(TARGET_COPY_OUT_VENDOR)/bin/hw/android.hardware.weaver-service.citadel \
-    vendor/google/shiba/proprietary/vendor/bin/hw/battery_mitigation:$(TARGET_COPY_OUT_VENDOR)/bin/hw/battery_mitigation \
-    vendor/google/shiba/proprietary/vendor/bin/hw/citadel_updater:$(TARGET_COPY_OUT_VENDOR)/bin/hw/citadel_updater \
-    vendor/google/shiba/proprietary/vendor/bin/hw/citadeld:$(TARGET_COPY_OUT_VENDOR)/bin/hw/citadeld \
-    vendor/google/shiba/proprietary/vendor/bin/hw/com.google.edgetpu.dba-service:$(TARGET_COPY_OUT_VENDOR)/bin/hw/com.google.edgetpu.dba-service \
-    vendor/google/shiba/proprietary/vendor/bin/hw/com.google.edgetpu.tachyon-service:$(TARGET_COPY_OUT_VENDOR)/bin/hw/com.google.edgetpu.tachyon-service \
-    vendor/google/shiba/proprietary/vendor/bin/hw/google.hardware.media.c2@2.0-service:$(TARGET_COPY_OUT_VENDOR)/bin/hw/google.hardware.media.c2@2.0-service \
-    vendor/google/shiba/proprietary/vendor/bin/hw/gpsd:$(TARGET_COPY_OUT_VENDOR)/bin/hw/gpsd \
-    vendor/google/shiba/proprietary/vendor/bin/hw/init_citadel:$(TARGET_COPY_OUT_VENDOR)/bin/hw/init_citadel \
-    vendor/google/shiba/proprietary/vendor/bin/hw/lhd:$(TARGET_COPY_OUT_VENDOR)/bin/hw/lhd \
-    vendor/google/shiba/proprietary/vendor/bin/hw/rild_exynos:$(TARGET_COPY_OUT_VENDOR)/bin/hw/rild_exynos \
-    vendor/google/shiba/proprietary/vendor/bin/hw/samsung.hardware.media.c2@1.2-service:$(TARGET_COPY_OUT_VENDOR)/bin/hw/samsung.hardware.media.c2@1.2-service \
-    vendor/google/shiba/proprietary/vendor/bin/hw/scd:$(TARGET_COPY_OUT_VENDOR)/bin/hw/scd \
-    vendor/google/shiba/proprietary/vendor/bin/hw/vendor.dolby.media.c2@1.0-service:$(TARGET_COPY_OUT_VENDOR)/bin/hw/vendor.dolby.media.c2@1.0-service \
-    vendor/google/shiba/proprietary/vendor/bin/hw/vendor.google.audiometricext@1.0-service-vendor:$(TARGET_COPY_OUT_VENDOR)/bin/hw/vendor.google.audiometricext@1.0-service-vendor \
-    vendor/google/shiba/proprietary/vendor/bin/hw/vendor.google.edgetpu_vendor_service@1.0-service:$(TARGET_COPY_OUT_VENDOR)/bin/hw/vendor.google.edgetpu_vendor_service@1.0-service \
-    vendor/google/shiba/proprietary/vendor/bin/hw/vendor.google.google_battery-service:$(TARGET_COPY_OUT_VENDOR)/bin/hw/vendor.google.google_battery-service \
-    vendor/google/shiba/proprietary/vendor/bin/hw/vendor.google.radioext@1.0-service:$(TARGET_COPY_OUT_VENDOR)/bin/hw/vendor.google.radioext@1.0-service \
-    vendor/google/shiba/proprietary/vendor/bin/hw/vendor.google.wireless_charger-default:$(TARGET_COPY_OUT_VENDOR)/bin/hw/vendor.google.wireless_charger-default \
-    vendor/google/shiba/proprietary/vendor/bin/init.camera.set-interrupts-ownership:$(TARGET_COPY_OUT_VENDOR)/bin/init.camera.set-interrupts-ownership \
-    vendor/google/shiba/proprietary/vendor/bin/init.radio.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.radio.sh \
-    vendor/google/shiba/proprietary/vendor/bin/modem_logging_control:$(TARGET_COPY_OUT_VENDOR)/bin/modem_logging_control \
-    vendor/google/shiba/proprietary/vendor/bin/modem_ml_svc_sit:$(TARGET_COPY_OUT_VENDOR)/bin/modem_ml_svc_sit \
-    vendor/google/shiba/proprietary/vendor/bin/modem_svc_sit:$(TARGET_COPY_OUT_VENDOR)/bin/modem_svc_sit \
-    vendor/google/shiba/proprietary/vendor/bin/rfsd:$(TARGET_COPY_OUT_VENDOR)/bin/rfsd \
-    vendor/google/shiba/proprietary/vendor/bin/securedpud.slider:$(TARGET_COPY_OUT_VENDOR)/bin/securedpud.slider \
-    vendor/google/shiba/proprietary/vendor/bin/sscoredump:$(TARGET_COPY_OUT_VENDOR)/bin/sscoredump \
-    vendor/google/shiba/proprietary/vendor/bin/trusty_metricsd:$(TARGET_COPY_OUT_VENDOR)/bin/trusty_metricsd \
-    vendor/google/shiba/proprietary/vendor/bin/twoshay:$(TARGET_COPY_OUT_VENDOR)/bin/twoshay \
-    vendor/google/shiba/proprietary/vendor/bin/umfw_stat_tool:$(TARGET_COPY_OUT_VENDOR)/bin/umfw_stat_tool \
-    vendor/google/shiba/proprietary/vendor/bin/usf_stats:$(TARGET_COPY_OUT_VENDOR)/bin/usf_stats \
-    vendor/google/shiba/proprietary/vendor/bin/wfc-pkt-router:$(TARGET_COPY_OUT_VENDOR)/bin/wfc-pkt-router \
     vendor/google/shiba/proprietary/vendor/etc/atc_profile.json:$(TARGET_COPY_OUT_VENDOR)/etc/atc_profile.json \
     vendor/google/shiba/proprietary/vendor/etc/bluetooth/bt_vendor.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/bt_vendor.conf \
     vendor/google/shiba/proprietary/vendor/etc/chre/activity.napp_header:$(TARGET_COPY_OUT_VENDOR)/etc/chre/activity.napp_header \
@@ -1898,155 +1848,155 @@ PRODUCT_COPY_FILES += \
     vendor/google/shiba/proprietary/vendor/firmware/uecapconfig/VODA_IDEA.binarypb:$(TARGET_COPY_OUT_VENDOR)/firmware/uecapconfig/VODA_IDEA.binarypb \
     vendor/google/shiba/proprietary/vendor/firmware/uecapconfig/VZW.binarypb:$(TARGET_COPY_OUT_VENDOR)/firmware/uecapconfig/VZW.binarypb \
     vendor/google/shiba/proprietary/vendor/firmware/uecapconfig/WILDCARD.binarypb:$(TARGET_COPY_OUT_VENDOR)/firmware/uecapconfig/WILDCARD.binarypb \
-    vendor/google/shiba/proprietary/vendor/firmware/uecapconfig/WINDTRE.binarypb:$(TARGET_COPY_OUT_VENDOR)/firmware/uecapconfig/WINDTRE.binarypb \
-    vendor/google/shiba/proprietary/vendor/lib64/android.hardware.audio.sounddose-vendor-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.hardware.audio.sounddose-vendor-impl.so \
-    vendor/google/shiba/proprietary/vendor/lib64/android.hardware.authsecret-impl.nos.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.hardware.authsecret-impl.nos.so \
-    vendor/google/shiba/proprietary/vendor/lib64/android.hardware.confirmationui.secure_input_citadel.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.hardware.confirmationui.secure_input_citadel.so \
-    vendor/google/shiba/proprietary/vendor/lib64/android.hardware.identity@1.0-impl.nos.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.hardware.identity@1.0-impl.nos.so \
-    vendor/google/shiba/proprietary/vendor/lib64/android.hardware.keymaster@4.1-impl.nos.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.hardware.keymaster@4.1-impl.nos.so \
-    vendor/google/shiba/proprietary/vendor/lib64/android.hardware.oemlock-impl.nos.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.hardware.oemlock-impl.nos.so \
-    vendor/google/shiba/proprietary/vendor/lib64/android.hardware.security.keymint-impl.nos.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.hardware.security.keymint-impl.nos.so \
-    vendor/google/shiba/proprietary/vendor/lib64/android.hardware.weaver-bridge.nos.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.hardware.weaver-bridge.nos.so \
-    vendor/google/shiba/proprietary/vendor/lib64/android.hardware.weaver-impl.nos.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.hardware.weaver-impl.nos.so \
-    vendor/google/shiba/proprietary/vendor/lib64/android.hardware.weaver2-impl.nos.so:$(TARGET_COPY_OUT_VENDOR)/lib64/android.hardware.weaver2-impl.nos.so \
-    vendor/google/shiba/proprietary/vendor/lib64/aoc_aud_ext.so:$(TARGET_COPY_OUT_VENDOR)/lib64/aoc_aud_ext.so \
-    vendor/google/shiba/proprietary/vendor/lib64/aoc_audio_stereo_spatializer.so:$(TARGET_COPY_OUT_VENDOR)/lib64/aoc_audio_stereo_spatializer.so \
-    vendor/google/shiba/proprietary/vendor/lib64/audio_adapted_info_features.so:$(TARGET_COPY_OUT_VENDOR)/lib64/audio_adapted_info_features.so \
-    vendor/google/shiba/proprietary/vendor/lib64/audio_amcs_ext.so:$(TARGET_COPY_OUT_VENDOR)/lib64/audio_amcs_ext.so \
-    vendor/google/shiba/proprietary/vendor/lib64/audio_bluenote_aoc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/audio_bluenote_aoc.so \
-    vendor/google/shiba/proprietary/vendor/lib64/audio_bt_aoc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/audio_bt_aoc.so \
-    vendor/google/shiba/proprietary/vendor/lib64/audio_cca_aoc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/audio_cca_aoc.so \
-    vendor/google/shiba/proprietary/vendor/lib64/audio_compensation_aoc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/audio_compensation_aoc.so \
-    vendor/google/shiba/proprietary/vendor/lib64/audio_fortemedia_aoc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/audio_fortemedia_aoc.so \
-    vendor/google/shiba/proprietary/vendor/lib64/audio_hdmi_aoc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/audio_hdmi_aoc.so \
-    vendor/google/shiba/proprietary/vendor/lib64/audio_sounddose_aoc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/audio_sounddose_aoc.so \
-    vendor/google/shiba/proprietary/vendor/lib64/audio_spk_35l41.so:$(TARGET_COPY_OUT_VENDOR)/lib64/audio_spk_35l41.so \
-    vendor/google/shiba/proprietary/vendor/lib64/audio_spk_tas25xx.so:$(TARGET_COPY_OUT_VENDOR)/lib64/audio_spk_tas25xx.so \
-    vendor/google/shiba/proprietary/vendor/lib64/audio_tunnel_aoc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/audio_tunnel_aoc.so \
-    vendor/google/shiba/proprietary/vendor/lib64/audio_usb_aoc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/audio_usb_aoc.so \
-    vendor/google/shiba/proprietary/vendor/lib64/audio_waves_aoc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/audio_waves_aoc.so \
-    vendor/google/shiba/proprietary/vendor/lib64/com.google.edgetpu.dba-V1-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/com.google.edgetpu.dba-V1-ndk.so \
-    vendor/google/shiba/proprietary/vendor/lib64/com.google.edgetpu.tachyon-V1-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/com.google.edgetpu.tachyon-V1-ndk.so \
-    vendor/google/shiba/proprietary/vendor/lib64/com.google.edgetpu_app_service-V3-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/com.google.edgetpu_app_service-V3-ndk.so \
-    vendor/google/shiba/proprietary/vendor/lib64/com.google.edgetpu_vendor_service-V2-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/com.google.edgetpu_vendor_service-V2-ndk.so \
-    vendor/google/shiba/proprietary/vendor/lib64/com.google.input-V2-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/com.google.input-V2-ndk.so \
-    vendor/google/shiba/proprietary/vendor/lib64/com.google.input-V3-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/com.google.input-V3-ndk.so \
-    vendor/google/shiba/proprietary/vendor/lib64/com.google.pixel.modem.logmasklibrary-V1-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/com.google.pixel.modem.logmasklibrary-V1-ndk.so \
-    vendor/google/shiba/proprietary/vendor/lib64/egl/libGLES_mali.so:$(TARGET_COPY_OUT_VENDOR)/lib64/egl/libGLES_mali.so \
-    vendor/google/shiba/proprietary/vendor/lib64/fake_gxp_telemetry_reader.so:$(TARGET_COPY_OUT_VENDOR)/lib64/fake_gxp_telemetry_reader.so \
-    vendor/google/shiba/proprietary/vendor/lib64/gxp_metrics_logger.so:$(TARGET_COPY_OUT_VENDOR)/lib64/gxp_metrics_logger.so \
-    vendor/google/shiba/proprietary/vendor/lib64/gxp_telemetry_reader.so:$(TARGET_COPY_OUT_VENDOR)/lib64/gxp_telemetry_reader.so \
-    vendor/google/shiba/proprietary/vendor/lib64/hw/android.hardware.gnss@2.1-impl-google.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/android.hardware.gnss@2.1-impl-google.so \
-    vendor/google/shiba/proprietary/vendor/lib64/hw/audio.platform.aoc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/audio.platform.aoc.so \
-    vendor/google/shiba/proprietary/vendor/lib64/hw/audio.primary.zuma.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/audio.primary.zuma.so \
-    vendor/google/shiba/proprietary/vendor/lib64/hw/flp.default.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/flp.default.so \
-    vendor/google/shiba/proprietary/vendor/lib64/hw/gps.default.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/gps.default.so \
-    vendor/google/shiba/proprietary/vendor/lib64/hw/sound_trigger.primary.zuma.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/sound_trigger.primary.zuma.so \
-    vendor/google/shiba/proprietary/vendor/lib64/hw/vendor.google.whitechapel.audio.audioext@4.0-impl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/vendor.google.whitechapel.audio.audioext@4.0-impl.so \
-    vendor/google/shiba/proprietary/vendor/lib64/hw/vulkan.mali.so:$(TARGET_COPY_OUT_VENDOR)/lib64/hw/vulkan.mali.so \
-    vendor/google/shiba/proprietary/vendor/lib64/lassen_dmd_constants.so:$(TARGET_COPY_OUT_VENDOR)/lib64/lassen_dmd_constants.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libAlgFx_HiFi3z.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libAlgFx_HiFi3z.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libExynosC2ComponentStore.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libExynosC2ComponentStore.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libExynosC2H263Dec.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libExynosC2H263Dec.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libExynosC2H263Enc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libExynosC2H263Enc.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libExynosC2H264Dec.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libExynosC2H264Dec.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libExynosC2H264Enc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libExynosC2H264Enc.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libExynosC2HevcDec.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libExynosC2HevcDec.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libExynosC2HevcEnc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libExynosC2HevcEnc.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libExynosC2Mpeg4Dec.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libExynosC2Mpeg4Dec.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libExynosC2Mpeg4Enc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libExynosC2Mpeg4Enc.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libExynosC2Vp8Dec.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libExynosC2Vp8Dec.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libExynosC2Vp8Enc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libExynosC2Vp8Enc.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libExynosC2Vp9Dec.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libExynosC2Vp9Dec.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libExynosC2Vp9Enc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libExynosC2Vp9Enc.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libOpenCL-pixel.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libOpenCL-pixel.so \
-    vendor/google/shiba/proprietary/vendor/lib64/lib_aion_buffer.so:$(TARGET_COPY_OUT_VENDOR)/lib64/lib_aion_buffer.so \
-    vendor/google/shiba/proprietary/vendor/lib64/lib_jpg_encoder.so:$(TARGET_COPY_OUT_VENDOR)/lib64/lib_jpg_encoder.so \
-    vendor/google/shiba/proprietary/vendor/lib64/lib_reader.so:$(TARGET_COPY_OUT_VENDOR)/lib64/lib_reader.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libadaptedinfo.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libadaptedinfo.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libamcsextfile.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libamcsextfile.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libaoc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libaoc.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libaoctuningdecoder.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libaoctuningdecoder.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libaocx.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libaocx.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libbw_av1dec.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libbw_av1dec.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libbw_av1enc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libbw_av1enc.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libc2filterplugin.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libc2filterplugin.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libcodec2_soft_ddpdec.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcodec2_soft_ddpdec.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libcodec2_store_dolby.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libcodec2_store_dolby.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libdapparamstorage.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libdapparamstorage.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libdarwinn_dba_hal_runtime.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libdarwinn_dba_hal_runtime.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libdarwinn_hal.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libdarwinn_hal.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libdeccfg.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libdeccfg.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libdeeptouch.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libdeeptouch.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libdisplaycolor.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libdisplaycolor.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libedgetpu_client.google.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libedgetpu_client.google.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libedgetpu_tflite_compiler.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libedgetpu_tflite_compiler.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libedgetpu_util.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libedgetpu_util.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libfvsam_prm_parser.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libfvsam_prm_parser.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libgc2_bw_av1_dec.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libgc2_bw_av1_dec.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libgc2_bw_av1_enc.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libgc2_bw_av1_enc.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libgc2_bw_base.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libgc2_bw_base.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libgc2_bw_cwl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libgc2_bw_cwl.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libgc2_bw_log.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libgc2_bw_log.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libgc2_bw_store.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libgc2_bw_store.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libgc2_bw_utils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libgc2_bw_utils.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libgooglerilaudio.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libgooglerilaudio.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libgooglerilmemmonitor.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libgooglerilmemmonitor.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libgpudataproducer.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libgpudataproducer.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libgril_oem-google.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libgril_oem-google.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libgxp.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libgxp.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libion_exynos.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libion_exynos.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libmahalcontroller.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmahalcontroller.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libmetrics_logger.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmetrics_logger.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libmodem_ml_svc_proto.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmodem_ml_svc_proto.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libmodem_svc_proto_legacy.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libmodem_svc_proto_legacy.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libnos_citadeld_proxy.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libnos_citadeld_proxy.so \
-    vendor/google/shiba/proprietary/vendor/lib64/liboemcrypto.so:$(TARGET_COPY_OUT_VENDOR)/lib64/liboemcrypto.so \
-    vendor/google/shiba/proprietary/vendor/lib64/liboemservice.so:$(TARGET_COPY_OUT_VENDOR)/lib64/liboemservice.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libril-aidl.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libril-aidl.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libril_gfeature.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libril_gfeature.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libril_sitril.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libril_sitril.so \
-    vendor/google/shiba/proprietary/vendor/lib64/librtxproto_aidl-default.so:$(TARGET_COPY_OUT_VENDOR)/lib64/librtxproto_aidl-default.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libsensorsuez.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsensorsuez.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libsit_oem.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsit_oem.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libsit_oem_proto.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsit_oem_proto.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libsitril-audio.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsitril-audio.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libsitril-client.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsitril-client.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libsitril-gps.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsitril-gps.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libsitril-ims.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsitril-ims.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libsitril.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsitril.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libstpreprocess21.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libstpreprocess21.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libstreset23.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libstreset23.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libsueznanoappclients.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libsueznanoappclients.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libtachyon_core.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libtachyon_core.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libtouchflow.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libtouchflow.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libusf.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libusf.so \
-    vendor/google/shiba/proprietary/vendor/lib64/libwlcproto_aidl-default.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libwlcproto_aidl-default.so \
-    vendor/google/shiba/proprietary/vendor/lib64/modem_ml_pw_rpc_gen.so:$(TARGET_COPY_OUT_VENDOR)/lib64/modem_ml_pw_rpc_gen.so \
-    vendor/google/shiba/proprietary/vendor/lib64/sensors.usf.so:$(TARGET_COPY_OUT_VENDOR)/lib64/sensors.usf.so \
-    vendor/google/shiba/proprietary/vendor/lib64/soundfx/liboffloadeffect.so:$(TARGET_COPY_OUT_VENDOR)/lib64/soundfx/liboffloadeffect.so \
-    vendor/google/shiba/proprietary/vendor/lib64/soundfx/libspatialaudio.so:$(TARGET_COPY_OUT_VENDOR)/lib64/soundfx/libspatialaudio.so \
-    vendor/google/shiba/proprietary/vendor/lib64/vendor-pixelatoms-cpp.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor-pixelatoms-cpp.so \
-    vendor/google/shiba/proprietary/vendor/lib64/vendor.google.audiometricext@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.google.audiometricext@1.0.so \
-    vendor/google/shiba/proprietary/vendor/lib64/vendor.google.battery_mitigation-V1-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.google.battery_mitigation-V1-ndk.so \
-    vendor/google/shiba/proprietary/vendor/lib64/vendor.google.battery_mitigation.service_static.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.google.battery_mitigation.service_static.so \
-    vendor/google/shiba/proprietary/vendor/lib64/vendor.google.bluetooth_ext-V1-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.google.bluetooth_ext-V1-ndk.so \
-    vendor/google/shiba/proprietary/vendor/lib64/vendor.google.google_battery-V3-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.google.google_battery-V3-ndk.so \
-    vendor/google/shiba/proprietary/vendor/lib64/vendor.google.whitechapel.audio.audioext@4.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.google.whitechapel.audio.audioext@4.0.so \
-    vendor/google/shiba/proprietary/vendor/lib64/vendor.google.whitechapel.audio.extension-V1-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.google.whitechapel.audio.extension-V1-ndk.so \
-    vendor/google/shiba/proprietary/vendor/lib64/vendor.google.wireless_charger-V2-ndk.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.google.wireless_charger-V2-ndk.so \
-    vendor/google/shiba/proprietary/vendor/lib64/vendor.radio.base.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.radio.base.so \
-    vendor/google/shiba/proprietary/vendor/lib64/vendor.radio.protocol.sit.base.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.radio.protocol.sit.base.so \
-    vendor/google/shiba/proprietary/vendor/lib64/vendor.radio.protocol.sit.json.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.radio.protocol.sit.json.so \
-    vendor/google/shiba/proprietary/vendor/lib64/vendor.radio.protocol.sit.stream.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.radio.protocol.sit.stream.so \
-    vendor/google/shiba/proprietary/vendor/lib64/vendor.samsung_slsi.telephony.hardware.oemservice@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.samsung_slsi.telephony.hardware.oemservice@1.0.so \
-    vendor/google/shiba/proprietary/vendor/lib64/vendor.samsung_slsi.telephony.hardware.radioExternal@1.0.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.samsung_slsi.telephony.hardware.radioExternal@1.0.so \
-    vendor/google/shiba/proprietary/vendor/lib64/vendor.samsung_slsi.telephony.hardware.radioExternal@1.1.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor.samsung_slsi.telephony.hardware.radioExternal@1.1.so \
-    vendor/google/shiba/proprietary/vendor/lib64/vendor_chre_atoms_log.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor_chre_atoms_log.so \
-    vendor/google/shiba/proprietary/vendor/lib64/vendor_chre_metrics-cpp.so:$(TARGET_COPY_OUT_VENDOR)/lib64/vendor_chre_metrics-cpp.so
+    vendor/google/shiba/proprietary/vendor/firmware/uecapconfig/WINDTRE.binarypb:$(TARGET_COPY_OUT_VENDOR)/firmware/uecapconfig/WINDTRE.binarypb
 
 PRODUCT_PACKAGES += \
+    android.hardware.audio.sounddose-vendor-impl \
+    android.hardware.authsecret-impl.nos \
+    android.hardware.confirmationui.secure_input_citadel \
+    android.hardware.identity@1.0-impl.nos \
+    android.hardware.keymaster@4.1-impl.nos \
+    android.hardware.oemlock-impl.nos \
+    android.hardware.security.keymint-impl.nos \
+    android.hardware.weaver-bridge.nos \
+    android.hardware.weaver-impl.nos \
+    android.hardware.weaver2-impl.nos \
+    aoc_aud_ext \
+    aoc_audio_stereo_spatializer \
+    audio_adapted_info_features \
+    audio_amcs_ext \
+    audio_bluenote_aoc \
+    audio_bt_aoc \
+    audio_cca_aoc \
+    audio_compensation_aoc \
+    audio_fortemedia_aoc \
+    audio_hdmi_aoc \
+    audio_sounddose_aoc \
+    audio_spk_35l41 \
+    audio_spk_tas25xx \
+    audio_tunnel_aoc \
+    audio_usb_aoc \
+    audio_waves_aoc \
+    com.google.edgetpu.dba-V1-ndk \
+    com.google.edgetpu.tachyon-V1-ndk \
+    com.google.edgetpu_app_service-V3-ndk-vendor \
+    com.google.edgetpu_vendor_service-V2-ndk-vendor \
+    com.google.input-V2-ndk \
+    com.google.input-V3-ndk \
+    com.google.pixel.modem.logmasklibrary-V1-ndk \
+    libGLES_mali \
+    fake_gxp_telemetry_reader \
+    gxp_metrics_logger \
+    gxp_telemetry_reader \
+    android.hardware.gnss@2.1-impl-google \
+    audio.platform.aoc \
+    audio.primary.zuma \
+    flp.default \
+    gps.default \
+    sound_trigger.primary.zuma \
+    vendor.google.whitechapel.audio.audioext@4.0-impl \
+    vulkan.mali \
+    lassen_dmd_constants \
+    libAlgFx_HiFi3z \
+    libExynosC2ComponentStore \
+    libExynosC2H263Dec \
+    libExynosC2H263Enc \
+    libExynosC2H264Dec \
+    libExynosC2H264Enc \
+    libExynosC2HevcDec \
+    libExynosC2HevcEnc \
+    libExynosC2Mpeg4Dec \
+    libExynosC2Mpeg4Enc \
+    libExynosC2Vp8Dec \
+    libExynosC2Vp8Enc \
+    libExynosC2Vp9Dec \
+    libExynosC2Vp9Enc \
+    libOpenCL-pixel \
     libOpenCL \
+    lib_aion_buffer \
+    lib_jpg_encoder \
+    lib_reader \
+    libadaptedinfo \
+    libamcsextfile \
+    libaoc \
+    libaoctuningdecoder \
+    libaocx \
+    libbw_av1dec \
+    libbw_av1enc \
+    libc2filterplugin \
+    libcodec2_soft_ddpdec \
+    libcodec2_store_dolby \
+    libdapparamstorage \
+    libdarwinn_dba_hal_runtime \
+    libdarwinn_hal \
+    libdeccfg \
+    libdeeptouch \
+    libdisplaycolor \
+    libedgetpu_client.google \
+    libedgetpu_tflite_compiler \
+    libedgetpu_util \
+    libfvsam_prm_parser \
+    libgc2_bw_av1_dec \
+    libgc2_bw_av1_enc \
+    libgc2_bw_base \
+    libgc2_bw_cwl \
+    libgc2_bw_log \
+    libgc2_bw_store \
+    libgc2_bw_utils \
+    libgooglerilaudio \
+    libgooglerilmemmonitor \
+    libgpudataproducer \
+    libgril_oem-google \
+    libgxp \
+    libion_exynos \
+    libmahalcontroller \
+    libmetrics_logger \
+    libmodem_ml_svc_proto \
+    libmodem_svc_proto_legacy \
+    libnos_citadeld_proxy \
+    liboemcrypto \
+    liboemservice \
+    libril-aidl \
+    libril_gfeature \
+    libril_sitril \
+    librtxproto_aidl-default \
+    libsensorsuez \
+    libsit_oem \
+    libsit_oem_proto \
+    libsitril-audio \
+    libsitril-client \
+    libsitril-gps \
+    libsitril-ims \
+    libsitril \
+    libstpreprocess21 \
+    libstreset23 \
+    libsueznanoappclients \
+    libtachyon_core \
+    libtouchflow \
+    libusf \
+    libwlcproto_aidl-default \
+    modem_ml_pw_rpc_gen \
+    sensors.usf \
+    liboffloadeffect \
+    libspatialaudio \
+    vendor-pixelatoms-cpp \
+    vendor.google.audiometricext@1.0 \
+    vendor.google.battery_mitigation-V1-ndk \
+    vendor.google.battery_mitigation.service_static \
+    vendor.google.bluetooth_ext-V1-ndk \
+    vendor.google.google_battery-V3-ndk \
+    vendor.google.whitechapel.audio.audioext@4.0 \
+    vendor.google.whitechapel.audio.extension-V1-ndk \
+    vendor.google.wireless_charger-V2-ndk \
+    vendor.radio.base \
+    vendor.radio.protocol.sit.base \
+    vendor.radio.protocol.sit.json \
+    vendor.radio.protocol.sit.stream \
+    vendor.samsung_slsi.telephony.hardware.oemservice@1.0 \
+    vendor.samsung_slsi.telephony.hardware.radioExternal@1.0 \
+    vendor.samsung_slsi.telephony.hardware.radioExternal@1.1 \
+    vendor_chre_atoms_log \
+    vendor_chre_metrics-cpp \
     com.google.android.hardware.biometrics.face.pixel23 \
     com.google.android.hardware.biometrics.fingerprint \
     com.google.android.widevine-wv_341113000 \
@@ -2075,4 +2025,54 @@ PRODUCT_PACKAGES += \
     vendor.google.battery_mitigation-default \
     vendor.google.edgetpu_vendor_service@1.0-service \
     vendor.google.google_battery-default \
-    vendor.google.wireless_charger-default
+    vendor.google.wireless_charger-default \
+    aocd \
+    aocxd \
+    bipchmgr \
+    cbd \
+    dmd \
+    android.hardware.authsecret-service.citadel \
+    android.hardware.bluetooth-service.bcmbtlinux \
+    android.hardware.confirmationui-service.trusty.vendor \
+    android.hardware.contexthub-service.generic \
+    android.hardware.edgetpu.logging@service-edgetpu-logging \
+    android.hardware.gnss@2.1-service-brcm \
+    android.hardware.gxp.logging@service-gxp-logging \
+    android.hardware.identity@1.0-service.citadel \
+    android.hardware.input.processor-service \
+    android.hardware.neuralnetworks@service-darwinn-aidl \
+    android.hardware.oemlock-service.citadel \
+    android.hardware.secure_element-service.uicc \
+    android.hardware.security.keymint-service.citadel \
+    android.hardware.weaver-service.citadel \
+    battery_mitigation \
+    citadel_updater \
+    citadeld \
+    com.google.edgetpu.dba-service \
+    com.google.edgetpu.tachyon-service \
+    google.hardware.media.c2@2.0-service \
+    gpsd \
+    init_citadel \
+    lhd \
+    rild_exynos \
+    samsung.hardware.media.c2@1.2-service \
+    scd \
+    vendor.dolby.media.c2@1.0-service \
+    vendor.google.audiometricext@1.0-service-vendor \
+    vendor.google.edgetpu_vendor_service@1.0-service \
+    vendor.google.google_battery-service \
+    vendor.google.radioext@1.0-service \
+    vendor.google.wireless_charger-default \
+    init.camera.set-interrupts-ownership \
+    init.radio \
+    modem_logging_control \
+    modem_ml_svc_sit \
+    modem_svc_sit \
+    rfsd \
+    securedpud.slider \
+    sscoredump \
+    trusty_metricsd \
+    twoshay \
+    umfw_stat_tool \
+    usf_stats \
+    wfc-pkt-router
