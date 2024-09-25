@@ -145,19 +145,6 @@ android_app_import {
 }
 
 android_app_import {
-	name: "AICorePrebuilt",
-	owner: "google",
-	apk: "proprietary/product/priv-app/AICorePrebuilt/AICorePrebuilt.apk",
-	preprocessed: true,
-	presigned: true,
-	dex_preopt: {
-		enabled: false,
-	},
-	privileged: true,
-	product_specific: true,
-}
-
-android_app_import {
 	name: "AppDirectedSMSService",
 	owner: "google",
 	apk: "proprietary/product/priv-app/AppDirectedSMSService/AppDirectedSMSService.apk",
@@ -225,32 +212,6 @@ android_app_import {
 	owner: "google",
 	apk: "proprietary/product/priv-app/DMService/DMService.apk",
 	certificate: "platform",
-	dex_preopt: {
-		enabled: false,
-	},
-	privileged: true,
-	product_specific: true,
-}
-
-android_app_import {
-	name: "DeviceIntelligenceNetworkPrebuilt",
-	owner: "google",
-	apk: "proprietary/product/priv-app/DeviceIntelligenceNetworkPrebuilt/DeviceIntelligenceNetworkPrebuilt.apk",
-	preprocessed: true,
-	presigned: true,
-	dex_preopt: {
-		enabled: false,
-	},
-	privileged: true,
-	product_specific: true,
-}
-
-android_app_import {
-	name: "DevicePersonalizationPrebuiltPixel2023",
-	owner: "google",
-	apk: "proprietary/product/priv-app/DevicePersonalizationPrebuiltPixel2023/DevicePersonalizationPrebuiltPixel2023.apk",
-	preprocessed: true,
-	presigned: true,
 	dex_preopt: {
 		enabled: false,
 	},
@@ -565,13 +526,6 @@ dex_import {
 	owner: "google",
 	jars: ["proprietary/product/framework/libhwinfo.jar"],
 	product_specific: true,
-}
-
-dex_import {
-	name: "RadioConfigLib",
-	owner: "google",
-	jars: ["proprietary/system_ext/framework/RadioConfigLib.jar"],
-	system_ext_specific: true,
 }
 
 dex_import {
