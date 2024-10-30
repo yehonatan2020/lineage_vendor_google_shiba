@@ -132,6 +132,57 @@ cc_prebuilt_library_shared {
 	system_ext_specific: true,
 }
 
+cc_prebuilt_library_shared {
+	name: "libpixelimsmedia",
+	owner: "google",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/libpixelimsmedia.so"],
+			shared_libs: ["vendor.google.whitechapel.audio.extension-V2-ndk", "libbinder_ndk", "libhidlbase", "vendor.google.whitechapel.audio.audioext@4.0", "framework-permission-aidl-cpp", "libaaudio", "libandroid", "libandroid_runtime", "libbinder", "libcamera2ndk", "libcutils", "libjnigraphics", "liblog", "libmediandk", "libnativewindow", "libutils", "libmediautils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "64",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "vendor.google.whitechapel.audio.audioext@4.0",
+	owner: "google",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/vendor.google.whitechapel.audio.audioext@4.0.so"],
+			shared_libs: ["libhidlbase", "liblog", "libutils", "libcutils", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "64",
+	prefer: true,
+	system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+	name: "vendor.google.whitechapel.audio.extension-V2-ndk",
+	owner: "google",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/system_ext/lib64/vendor.google.whitechapel.audio.extension-V2-ndk.so"],
+			shared_libs: ["libbinder_ndk", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "64",
+	prefer: true,
+	system_ext_specific: true,
+}
+
 android_app_import {
 	name: "VZWAPNLib",
 	owner: "google",
@@ -485,6 +536,18 @@ android_app_import {
 }
 
 android_app_import {
+	name: "PixelImsMediaService",
+	owner: "google",
+	apk: "proprietary/system_ext/priv-app/PixelImsMediaService/PixelImsMediaService.apk",
+	certificate: "platform",
+	dex_preopt: {
+		enabled: false,
+	},
+	privileged: true,
+	system_ext_specific: true,
+}
+
+android_app_import {
 	name: "PixelQualifiedNetworksService",
 	owner: "google",
 	apk: "proprietary/system_ext/priv-app/PixelQualifiedNetworksService/PixelQualifiedNetworksService.apk",
@@ -802,7 +865,7 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/aoc_aud_ext.so"],
-			shared_libs: ["libbase", "libhidlbase", "libutils", "vendor.google.whitechapel.audio.audioext@4.0", "libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["libbase", "libhidlbase", "libutils", "vendor.google.whitechapel.audio.audioext@4.0-vendor", "libcutils", "liblog", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
@@ -1408,7 +1471,7 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/hw/vendor.google.whitechapel.audio.audioext@4.0-impl.so"],
-			shared_libs: ["liblog", "libhidlbase", "libutils", "audio_tunnel_aoc", "vendor.google.whitechapel.audio.audioext@4.0", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["liblog", "libhidlbase", "libutils", "audio_tunnel_aoc", "vendor.google.whitechapel.audio.audioext@4.0-vendor", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
@@ -2272,7 +2335,7 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libgooglerilaudio.so"],
-			shared_libs: ["vendor.google.whitechapel.audio.extension-V2-ndk", "libbase", "libbinder_ndk", "libcutils", "liblog", "libutils", "vendor.google.whitechapel.audio.audioext@4.0", "libhidlbase", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["vendor.google.whitechapel.audio.extension-V2-ndk-vendor", "libbase", "libbinder_ndk", "libcutils", "liblog", "libutils", "vendor.google.whitechapel.audio.audioext@4.0-vendor", "libhidlbase", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
@@ -2680,7 +2743,7 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libsitril.so"],
-			shared_libs: ["vendor.google.whitechapel.audio.extension-V2-ndk", "libril_gfeature", "libbinder_ndk", "libgooglerilaudio", "vendor.google.whitechapel.audio.audioext@4.0", "libbase", "liblog", "libcutils", "libsqlite", "libcrypto", "libhardware_legacy", "libnetutils", "librilutils", "libutils", "libxml2", "libjsoncpp", "vendor.radio.base", "vendor.radio.protocol.sit.base", "vendor.radio.protocol.sit.stream", "vendor.radio.protocol.sit.json", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["vendor.google.whitechapel.audio.extension-V2-ndk-vendor", "libril_gfeature", "libbinder_ndk", "libgooglerilaudio", "vendor.google.whitechapel.audio.audioext@4.0-vendor", "libbase", "liblog", "libcutils", "libsqlite", "libcrypto", "libhardware_legacy", "libnetutils", "librilutils", "libutils", "libxml2", "libjsoncpp", "vendor.radio.base", "vendor.radio.protocol.sit.base", "vendor.radio.protocol.sit.stream", "vendor.radio.protocol.sit.json", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
@@ -3031,7 +3094,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-	name: "vendor.google.whitechapel.audio.audioext@4.0",
+	name: "vendor.google.whitechapel.audio.audioext@4.0-vendor",
+	stem: "vendor.google.whitechapel.audio.audioext@4.0",
 	owner: "google",
 	strip: {
 		none: true,
@@ -3048,7 +3112,8 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-	name: "vendor.google.whitechapel.audio.extension-V2-ndk",
+	name: "vendor.google.whitechapel.audio.extension-V2-ndk-vendor",
+	stem: "vendor.google.whitechapel.audio.extension-V2-ndk",
 	owner: "google",
 	strip: {
 		none: true,

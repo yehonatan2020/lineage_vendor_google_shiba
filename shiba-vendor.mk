@@ -72,6 +72,9 @@ PRODUCT_PACKAGES += \
     libedgetpu_dba.google \
     libmediaadaptor \
     libpixeldisplaymanager_jni \
+    libpixelimsmedia \
+    vendor.google.whitechapel.audio.audioext@4.0 \
+    vendor.google.whitechapel.audio.extension-V2-ndk \
     VZWAPNLib \
     AICorePrebuilt \
     AppDirectedSMSService \
@@ -100,6 +103,7 @@ PRODUCT_PACKAGES += \
     MyVerizonServices \
     OemRilService \
     PixelDisplayService \
+    PixelImsMediaService \
     PixelQualifiedNetworksService \
     RilConfigService \
     ShannonIms \
@@ -2058,8 +2062,8 @@ PRODUCT_PACKAGES += \
     vendor.google.battery_mitigation.service_static \
     vendor.google.bluetooth_ext-V1-ndk \
     vendor.google.google_battery-V3-ndk \
-    vendor.google.whitechapel.audio.audioext@4.0 \
-    vendor.google.whitechapel.audio.extension-V2-ndk \
+    vendor.google.whitechapel.audio.audioext@4.0-vendor \
+    vendor.google.whitechapel.audio.extension-V2-ndk-vendor \
     vendor.google.wireless_charger-V2-ndk \
     vendor.google.wireless_charger.service-V1-ndk \
     vendor.radio.base \
