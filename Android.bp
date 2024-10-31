@@ -1558,11 +1558,10 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libExynosC2H263Dec.so"],
-			shared_libs: ["liblog", "libutils", "libcutils", "libcodec2", "libcodec2_vndk", "libsfplugin_ccodec_utils", "libstagefright_foundation", "libstagefright_xmlparser", "libExynosC2ComponentStore", "libhardware", "libion_google", "libbinder_ndk", "libmedia_ecoservice", "libui", "libvendorgraphicbuffer", "libsync", "libEGL", "libGLESv2", "libGLESv3", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["liblog", "libutils", "libcutils", "libcodec2", "libcodec2_vndk", "libsfplugin_ccodec_utils", "libstagefright_foundation", "libstagefright_xmlparser", "libExynosC2ComponentStore", "libexynosv4l2", "libhardware", "libacryl", "libion_google", "libbinder_ndk", "libmedia_ecoservice", "libui", "libvendorgraphicbuffer", "libsync", "libEGL", "libGLESv2", "libGLESv3", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
-	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
 }
@@ -1576,11 +1575,10 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libExynosC2H263Enc.so"],
-			shared_libs: ["liblog", "libutils", "libcutils", "libcodec2", "libcodec2_vndk", "libsfplugin_ccodec_utils", "libstagefright_foundation", "libstagefright_xmlparser", "libExynosC2ComponentStore", "libhardware", "libion_google", "libbinder_ndk", "libmedia_ecoservice", "libui", "libvendorgraphicbuffer", "libsync", "libEGL", "libGLESv2", "libGLESv3", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["liblog", "libutils", "libcutils", "libcodec2", "libcodec2_vndk", "libsfplugin_ccodec_utils", "libstagefright_foundation", "libstagefright_xmlparser", "libExynosC2ComponentStore", "libexynosv4l2", "libhardware", "libacryl", "libion_google", "libbinder_ndk", "libmedia_ecoservice", "libui", "libvendorgraphicbuffer", "libsync", "libEGL", "libGLESv2", "libGLESv3", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
-	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
 }
@@ -1594,11 +1592,10 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libExynosC2H264Dec.so"],
-			shared_libs: ["liblog", "libutils", "libcutils", "libcodec2", "libcodec2_vndk", "libsfplugin_ccodec_utils", "libstagefright_foundation", "libstagefright_xmlparser", "libExynosC2ComponentStore", "libhardware", "libion_google", "libbinder_ndk", "libmedia_ecoservice", "libui", "libvendorgraphicbuffer", "libsync", "libEGL", "libGLESv2", "libGLESv3", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["liblog", "libutils", "libcutils", "libcodec2", "libcodec2_vndk", "libsfplugin_ccodec_utils", "libstagefright_foundation", "libstagefright_xmlparser", "libExynosC2ComponentStore", "libexynosv4l2", "libhardware", "libacryl", "libion_google", "libbinder_ndk", "libmedia_ecoservice", "libui", "libvendorgraphicbuffer", "libsync", "libEGL", "libGLESv2", "libGLESv3", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
-	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
 }
@@ -1612,11 +1609,10 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libExynosC2H264Enc.so"],
-			shared_libs: ["liblog", "libutils", "libcutils", "libcodec2", "libcodec2_vndk", "libsfplugin_ccodec_utils", "libstagefright_foundation", "libstagefright_xmlparser", "libExynosC2ComponentStore", "libhardware", "libion_google", "libbinder_ndk", "libmedia_ecoservice", "libui", "libvendorgraphicbuffer", "libsync", "libEGL", "libGLESv2", "libGLESv3", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["liblog", "libutils", "libcutils", "libcodec2", "libcodec2_vndk", "libsfplugin_ccodec_utils", "libstagefright_foundation", "libstagefright_xmlparser", "libExynosC2ComponentStore", "libexynosv4l2", "libhardware", "libacryl", "libion_google", "libbinder_ndk", "libmedia_ecoservice", "libui", "libvendorgraphicbuffer", "libsync", "libEGL", "libGLESv2", "libGLESv3", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
-	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
 }
@@ -1630,11 +1626,10 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libExynosC2HevcDec.so"],
-			shared_libs: ["liblog", "libutils", "libcutils", "libcodec2", "libcodec2_vndk", "libsfplugin_ccodec_utils", "libstagefright_foundation", "libstagefright_xmlparser", "libExynosC2ComponentStore", "libhardware", "libion_google", "libbinder_ndk", "libmedia_ecoservice", "libui", "libvendorgraphicbuffer", "libsync", "libEGL", "libGLESv2", "libGLESv3", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["liblog", "libutils", "libcutils", "libcodec2", "libcodec2_vndk", "libsfplugin_ccodec_utils", "libstagefright_foundation", "libstagefright_xmlparser", "libExynosC2ComponentStore", "libexynosv4l2", "libhardware", "libacryl", "libion_google", "libbinder_ndk", "libmedia_ecoservice", "libui", "libvendorgraphicbuffer", "libsync", "libEGL", "libGLESv2", "libGLESv3", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
-	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
 }
@@ -1648,11 +1643,10 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libExynosC2HevcEnc.so"],
-			shared_libs: ["liblog", "libutils", "libcutils", "libcodec2", "libcodec2_vndk", "libsfplugin_ccodec_utils", "libstagefright_foundation", "libstagefright_xmlparser", "libExynosC2ComponentStore", "libhardware", "libion_google", "libbinder_ndk", "libmedia_ecoservice", "libui", "libvendorgraphicbuffer", "libsync", "libEGL", "libGLESv2", "libGLESv3", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["liblog", "libutils", "libcutils", "libcodec2", "libcodec2_vndk", "libsfplugin_ccodec_utils", "libstagefright_foundation", "libstagefright_xmlparser", "libExynosC2ComponentStore", "libexynosv4l2", "libhardware", "libacryl", "libion_google", "libbinder_ndk", "libmedia_ecoservice", "libui", "libvendorgraphicbuffer", "libsync", "libEGL", "libGLESv2", "libGLESv3", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
-	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
 }
@@ -1666,11 +1660,10 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libExynosC2Mpeg4Dec.so"],
-			shared_libs: ["liblog", "libutils", "libcutils", "libcodec2", "libcodec2_vndk", "libsfplugin_ccodec_utils", "libstagefright_foundation", "libstagefright_xmlparser", "libExynosC2ComponentStore", "libhardware", "libion_google", "libbinder_ndk", "libmedia_ecoservice", "libui", "libvendorgraphicbuffer", "libsync", "libEGL", "libGLESv2", "libGLESv3", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["liblog", "libutils", "libcutils", "libcodec2", "libcodec2_vndk", "libsfplugin_ccodec_utils", "libstagefright_foundation", "libstagefright_xmlparser", "libExynosC2ComponentStore", "libexynosv4l2", "libhardware", "libacryl", "libion_google", "libbinder_ndk", "libmedia_ecoservice", "libui", "libvendorgraphicbuffer", "libsync", "libEGL", "libGLESv2", "libGLESv3", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
-	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
 }
@@ -1684,11 +1677,10 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libExynosC2Mpeg4Enc.so"],
-			shared_libs: ["liblog", "libutils", "libcutils", "libcodec2", "libcodec2_vndk", "libsfplugin_ccodec_utils", "libstagefright_foundation", "libstagefright_xmlparser", "libExynosC2ComponentStore", "libhardware", "libion_google", "libbinder_ndk", "libmedia_ecoservice", "libui", "libvendorgraphicbuffer", "libsync", "libEGL", "libGLESv2", "libGLESv3", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["liblog", "libutils", "libcutils", "libcodec2", "libcodec2_vndk", "libsfplugin_ccodec_utils", "libstagefright_foundation", "libstagefright_xmlparser", "libExynosC2ComponentStore", "libexynosv4l2", "libhardware", "libacryl", "libion_google", "libbinder_ndk", "libmedia_ecoservice", "libui", "libvendorgraphicbuffer", "libsync", "libEGL", "libGLESv2", "libGLESv3", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
-	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
 }
@@ -1702,11 +1694,10 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libExynosC2Vp8Dec.so"],
-			shared_libs: ["liblog", "libutils", "libcutils", "libcodec2", "libcodec2_vndk", "libsfplugin_ccodec_utils", "libstagefright_foundation", "libstagefright_xmlparser", "libExynosC2ComponentStore", "libhardware", "libion_google", "libbinder_ndk", "libmedia_ecoservice", "libui", "libvendorgraphicbuffer", "libsync", "libEGL", "libGLESv2", "libGLESv3", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["liblog", "libutils", "libcutils", "libcodec2", "libcodec2_vndk", "libsfplugin_ccodec_utils", "libstagefright_foundation", "libstagefright_xmlparser", "libExynosC2ComponentStore", "libexynosv4l2", "libhardware", "libacryl", "libion_google", "libbinder_ndk", "libmedia_ecoservice", "libui", "libvendorgraphicbuffer", "libsync", "libEGL", "libGLESv2", "libGLESv3", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
-	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
 }
@@ -1720,11 +1711,10 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libExynosC2Vp8Enc.so"],
-			shared_libs: ["liblog", "libutils", "libcutils", "libcodec2", "libcodec2_vndk", "libsfplugin_ccodec_utils", "libstagefright_foundation", "libstagefright_xmlparser", "libExynosC2ComponentStore", "libhardware", "libion_google", "libbinder_ndk", "libmedia_ecoservice", "libui", "libvendorgraphicbuffer", "libsync", "libEGL", "libGLESv2", "libGLESv3", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["liblog", "libutils", "libcutils", "libcodec2", "libcodec2_vndk", "libsfplugin_ccodec_utils", "libstagefright_foundation", "libstagefright_xmlparser", "libExynosC2ComponentStore", "libexynosv4l2", "libhardware", "libacryl", "libion_google", "libbinder_ndk", "libmedia_ecoservice", "libui", "libvendorgraphicbuffer", "libsync", "libEGL", "libGLESv2", "libGLESv3", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
-	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
 }
@@ -1738,11 +1728,10 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libExynosC2Vp9Dec.so"],
-			shared_libs: ["liblog", "libutils", "libcutils", "libcodec2", "libcodec2_vndk", "libsfplugin_ccodec_utils", "libstagefright_foundation", "libstagefright_xmlparser", "libExynosC2ComponentStore", "libhardware", "libion_google", "libbinder_ndk", "libmedia_ecoservice", "libui", "libvendorgraphicbuffer", "libsync", "libEGL", "libGLESv2", "libGLESv3", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["liblog", "libutils", "libcutils", "libcodec2", "libcodec2_vndk", "libsfplugin_ccodec_utils", "libstagefright_foundation", "libstagefright_xmlparser", "libExynosC2ComponentStore", "libexynosv4l2", "libhardware", "libacryl", "libion_google", "libbinder_ndk", "libmedia_ecoservice", "libui", "libvendorgraphicbuffer", "libsync", "libEGL", "libGLESv2", "libGLESv3", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
-	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
 }
@@ -1756,11 +1745,10 @@ cc_prebuilt_library_shared {
 	target: {
 		android_arm64: {
 			srcs: ["proprietary/vendor/lib64/libExynosC2Vp9Enc.so"],
-			shared_libs: ["liblog", "libutils", "libcutils", "libcodec2", "libcodec2_vndk", "libsfplugin_ccodec_utils", "libstagefright_foundation", "libstagefright_xmlparser", "libExynosC2ComponentStore", "libhardware", "libion_google", "libbinder_ndk", "libmedia_ecoservice", "libui", "libvendorgraphicbuffer", "libsync", "libEGL", "libGLESv2", "libGLESv3", "libc++", "libc", "libm", "libdl", ],
+			shared_libs: ["liblog", "libutils", "libcutils", "libcodec2", "libcodec2_vndk", "libsfplugin_ccodec_utils", "libstagefright_foundation", "libstagefright_xmlparser", "libExynosC2ComponentStore", "libexynosv4l2", "libhardware", "libacryl", "libion_google", "libbinder_ndk", "libmedia_ecoservice", "libui", "libvendorgraphicbuffer", "libsync", "libEGL", "libGLESv2", "libGLESv3", "libc++", "libc", "libm", "libdl", ],
 		},
 	},
 	compile_multilib: "64",
-	check_elf_files: false,
 	prefer: true,
 	soc_specific: true,
 }
